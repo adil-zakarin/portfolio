@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проекты — Адиль и команда</title>
+  <meta name="description" content="Калькулятор КП, автоматизация заявок и Telegram-бот записи: как устроены демо-проекты, в цифрах и схемах. Плюс коммерческий кейс: система учёта.">
+  <meta property="og:title" content="Проекты Адиля и команды — в цифрах и схемах">
+  <meta property="og:image" content="assets/kp-builder.jpg">
+  <meta name="theme-color" content="#eef0f5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h3.5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5-9 4.5z"/><path d="M3 7.5v9L12 21l9-4.5v-9M12 12v9"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 10v4h4l8 5V5L7 10z"/><path d="M18.5 9a4 4 0 0 1 0 6"/></symbol>
+    <symbol id="i-form" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></symbol>
+    <symbol id="i-nodes" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7.5 12h4l5-5.5M11.5 12l5 5.5"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 3 10.5l7 2.5 2.5 7z"/><path d="m21 3-11 10"/></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 7.5 20 18M8.5 16.5 20 6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M20 4v5h-5M4 20v-5h5"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></symbol>
+  </svg>
+  <div class="bg" aria-hidden="true"></div>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="nav">
+    <a class="nav__logo" href="index.html">Адиль<span>.dev</span></a>
+    <nav class="nav__links" aria-label="Разделы">
+      <a class="nav__keep" href="projects.html" aria-current="page">Проекты</a>
+      <a href="index.html#start">Как начать</a>
+      <a href="index.html#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn--sm" href="index.html#contacts">Консультация</a>
+  </header>
+
+  <main id="main">
+    <section class="page-hero wrap">
+      <h1>Проекты</h1>
+      <p class="lead">Один коммерческий кейс и три демо. Демо работают на вымышленных данных — они показывают, как будет устроена услуга, ещё до заказа. Поэтому цифр эффекта у них нет: только то, что можно проверить.</p>
+      <nav class="jump" aria-label="Проекты на странице">
+        <a class="chip" href="#erp">Система учёта · коммерческий</a>
+        <a class="chip" href="#kp">01 · Калькулятор КП</a>
+        <a class="chip" href="#leads">02 · Заявка за 3 секунды</a>
+        <a class="chip" href="#bot">03 · Бот записи</a>
+      </nav>
+
+      <div class="statband">
+        <div class="stat glass glass--sm reveal"><b style="color:#8e5bd6">до 4×</b><span>больше КП можно сделать за день у клиента после внедрения системы учёта: 10–20 вместо 3–5</span></div>
+        <div class="stat glass glass--sm reveal"><b style="color:#0a84ff">0,9 с</b><span>от отправки формы до Telegram менеджера в демо</span></div>
+        <div class="stat glass glass--sm reveal"><b style="color:#30a46c">1 кнопка</b><span>и готов PDF коммерческого предложения с реквизитами</span></div>
+        <div class="stat glass glass--sm reveal"><b style="color:#e5487a">24/7</b><span>запись в салон через бота, без администратора</span></div>
+      </div>
+    </section>
+
+    <!-- ERP -->
+    <section id="erp" class="proj wrap c-purple" aria-labelledby="erp-title">
+      <div class="proj__box">
+      <header class="proj__head reveal">
+        <div>
+          <p class="proj__num"><span>Коммерческий проект</span> <em>мерч-студия, Казахстан</em></p>
+          <h2 id="erp-title">Система учёта вместо Excel</h2>
+        </div>
+      </header>
+      <div class="erp glass reveal">
+        <div class="erp__col">
+          <h3>Было</h3>
+          <p>Учёт в Excel. Одно КП — 30–40 минут вручную, в день 3–5 КП, остальные ждали до недели.</p>
+        </div>
+        <svg class="ic"><use href="#i-arrow"/></svg>
+        <div class="erp__mods">
+          <div class="tile"><span class="ic-badge c-green"><svg class="ic"><use href="#i-list"/></svg></span>Каталог</div>
+          <div class="tile"><span class="ic-badge c-blue"><svg class="ic"><use href="#i-calc"/></svg></span>Калькулятор КП</div>
+          <div class="tile"><span class="ic-badge c-orange"><svg class="ic"><use href="#i-box"/></svg></span>Склад</div>
+        </div>
+        <svg class="ic"><use href="#i-arrow"/></svg>
+        <div class="metric"><b>до 4×</b><span>больше КП можно сделать за день: 10–20 вместо 3–5</span>
+          <small class="metric__how">одно КП — 3–5 минут вместо 30–40</small>
+        </div>
+        <p class="erp__note">Название клиента и детали скрыты: разрешения на публикацию нет.</p>
+      </div>
+      </div>
+    </section>
+
+    <!-- 01 KP -->
+    <section id="kp" class="proj wrap c-green" aria-labelledby="kp-title">
+      <div class="proj__box">
+      <header class="proj__head reveal">
+        <div>
+          <p class="proj__num"><span>01</span> <em>демо · типография «Paper Whale»</em></p>
+          <h2 id="kp-title">Калькулятор КП</h2>
+          <p class="lead">Менеджер собирает предложение из каталога. Скидки и НДС считаются сами, клиент получает PDF.</p>
+        </div>
+        <div class="proj__price glass glass--sm"><span>Входит в систему учёта</span><b>3–6 недель</b><small>срок разработки</small></div>
+      </header>
+
+      <div class="bento">
+        <div class="cell cell--6 glass glass--sm reveal">
+          <p class="cell__title">Путь менеджера — от клиента до PDF</p>
+          <ol class="flow">
+            <li class="tile"><span class="ic-badge c-blue"><svg class="ic"><use href="#i-user"/></svg></span><b>Клиент</b><span>из базы, реквизиты подставятся сами</span></li>
+            <li class="tile"><span class="ic-badge c-green"><svg class="ic"><use href="#i-list"/></svg></span><b>Позиции</b><span>из каталога: тираж, бумага, ламинация</span></li>
+            <li class="tile"><span class="ic-badge c-orange"><svg class="ic"><use href="#i-percent"/></svg></span><b>Скидка</b><span>за объём — по правилам прайса</span></li>
+            <li class="tile"><span class="ic-badge c-pink"><svg class="ic"><use href="#i-receipt"/></svg></span><b>НДС 12%</b><span>включается галочкой</span></li>
+            <li class="tile"><span class="ic-badge c-purple"><svg class="ic"><use href="#i-doc"/></svg></span><b>PDF</b><span>с номером, сроком и суммой прописью</span></li>
+          </ol>
+        </div>
+
+        <div class="cell cell--6 glass glass--sm reveal">
+          <p class="cell__title">Видео демо · 1 минута</p>
+          <video class="demo-video" controls playsinline muted preload="none" poster="assets/kp-demo-poster.jpg" width="1440" height="900">
+            <source src="assets/kp-demo.mp4" type="video/mp4">
+          </video>
+          <p class="cell__foot">Запись работы демо: выбор клиента, позиции и скидка за объём, сохранение КП, правка цен в каталоге. Данные вымышленные.</p>
+        </div>
+
+        <div class="cell cell--4 glass glass--sm reveal">
+          <p class="cell__title">Как считается КП · пример из демо</p>
+          <div class="wf grow">
+            <div class="wf__row"><span>Подытог</span><div class="wf__track"><i style="--l:0;--w:93.7"></i></div><b>42 500</b></div>
+            <div class="wf__row wf__row--neg"><span>Скидка за объём</span><div class="wf__track"><i style="--l:89.3;--w:4.4"></i></div><b>−2 000</b></div>
+            <div class="wf__row"><span>Без НДС</span><div class="wf__track"><i style="--l:0;--w:89.3"></i></div><b>40 500</b></div>
+            <div class="wf__row wf__row--add"><span>НДС 12%</span><div class="wf__track"><i style="--l:89.3;--w:10.7"></i></div><b>+4 860</b></div>
+            <div class="wf__row wf__row--total"><span>Итого с НДС</span><div class="wf__track"><i style="--l:0;--w:100"></i></div><b>45 360 ₸</b></div>
+          </div>
+          <p class="cell__foot">Визитки 1 000 шт и баннер 9 м². Расчёт покрыт тестами: округление, минимальный заказ, скидки, НДС.</p>
+        </div>
+
+        <div class="cell cell--2 glass glass--sm reveal">
+          <p class="cell__title">Скидка растёт с тиражом</p>
+          <ol class="tiers grow">
+            <li><span class="bar" style="--h:4"></span><small><b>20 ₸</b>от 100</small></li>
+            <li><span class="bar" style="--h:36">5%</span><small><b>19 ₸</b>от 500</small></li>
+            <li><span class="bar" style="--h:68">10%</span><small><b>18 ₸</b>от 1 000</small></li>
+            <li><span class="bar" style="--h:100">15%</span><small><b>17 ₸</b>от 3 000</small></li>
+          </ol>
+          <p class="cell__foot">Визитки, цена за штуку. Менеджер видит, с какого тиража следующая скидка.</p>
+        </div>
+
+        <div class="cell cell--6 reveal" style="padding:0">
+          <div class="shots">
+            <figure class="shot glass glass--sm">
+              <a href="assets/kp-builder.jpg" target="_blank" rel="noopener"><img src="assets/kp-builder.jpg" width="1800" height="1126" alt="Экран «Новое КП»: выбран клиент, добавлены визитки и баннер, справа превью предложения с итогом 45 360 ₸" loading="lazy"></a>
+              <figcaption>Экран «Новое КП»: документ виден ещё до сохранения</figcaption>
+            </figure>
+            <figure class="shot shot--paper glass glass--sm">
+              <a href="assets/kp-pdf.jpg" target="_blank" rel="noopener"><img src="assets/kp-pdf.jpg" width="1000" height="1414" alt="PDF коммерческого предложения КП-2026-0001" loading="lazy"></a>
+              <figcaption>PDF для клиента</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="cell cell--6 glass glass--sm reveal">
+          <p class="cell__title">Было → стало</p>
+          <ul class="ba">
+            <li><p>Прайс в Excel, у каждого менеджера своя копия</p><svg class="ic"><use href="#i-arrow"/></svg><p>Один прайс: цены и скидки меняет руководитель</p></li>
+            <li><p>КП собирают в Word из старого — с чужими реквизитами</p><svg class="ic"><use href="#i-arrow"/></svg><p>PDF с реквизитами и суммой прописью — одной кнопкой</p></li>
+            <li><p>Не найти, что и почём предлагали месяц назад</p><svg class="ic"><use href="#i-arrow"/></svg><p>История КП с номерами; цены в сохранённых КП не меняются</p></li>
+          </ul>
+          <p class="cell__foot"><span class="tags"><span>Next.js</span><span>TypeScript</span><span>React PDF</span><span>Vitest</span></span></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- 02 Leads -->
+    <section id="leads" class="proj wrap c-blue" aria-labelledby="leads-title">
+      <div class="proj__box">
+      <header class="proj__head reveal">
+        <div>
+          <p class="proj__num"><span>02</span> <em>демо · студия ремонта «Жайлы Studio»</em></p>
+          <h2 id="leads-title">Заявка за 3 секунды</h2>
+          <p class="lead">Заявка с сайта или рекламы сама приходит менеджеру в Telegram и записывается в Google Таблицу — с источником рекламы.</p>
+        </div>
+        <div class="proj__price glass glass--sm"><span>Автоматизация заявок</span><b>3–7 дней</b><small>срок разработки</small></div>
+      </header>
+
+      <div class="bento">
+        <div class="cell cell--6 glass glass--sm reveal">
+          <p class="cell__title">Путь заявки</p>
+          <ol class="flow">
+            <li class="tile"><span class="ic-badge c-pink"><svg class="ic"><use href="#i-megaphone"/></svg></span><b>Реклама</b><span>Instagram, Google, 2ГИС — с UTM-метками</span></li>
+            <li class="tile"><span class="ic-badge c-orange"><svg class="ic"><use href="#i-form"/></svg></span><b>Форма на сайте</b><span>маска телефона, проверка полей, защита от спама</span></li>
+            <li class="tile"><span class="ic-badge c-purple"><svg class="ic"><use href="#i-nodes"/></svg></span><b>n8n</b><span>сервис автоматизации: принимает заявку и раскладывает дальше</span></li>
+            <li class="tile">
+              <div class="flow__split">
+                <span class="tile c-blue"><svg class="ic"><use href="#i-send"/></svg>Telegram менеджеру</span>
+                <span class="tile c-green"><svg class="ic"><use href="#i-table"/></svg>Строка в Google Таблице</span>
+              </div>
+            </li>
+          </ol>
+          <p class="fallback"><svg class="ic"><use href="#i-warn"/></svg><span><b>Резервный канал.</b> Если n8n недоступен, сайт сам отправит заявку в Telegram — она не пропадёт молча.</span></p>
+        </div>
+
+        <div class="cell cell--6 glass glass--sm reveal">
+          <p class="cell__title">Видео демо · 54 секунды</p>
+          <video class="demo-video" controls playsinline muted preload="none" poster="assets/lead-demo-poster.jpg" width="1280" height="720">
+            <source src="assets/lead-demo.mp4" type="video/mp4">
+          </video>
+          <p class="cell__foot">Запись в реальном времени: заявка с сайта → сообщение менеджеру в Telegram → строка в Google Таблице. Бренд и данные вымышленные.</p>
+        </div>
+
+        <div class="cell cell--3 glass glass--sm reveal" style="background:linear-gradient(160deg,rgba(225,236,252,.75),rgba(255,255,255,.5))" data-chat>
+          <div class="phone" aria-label="Пример: заявки приходят менеджеру в Telegram">
+            <div class="phone__top"><span class="phone__avatar phone__avatar--blue" aria-hidden="true">Ж</span><span><b>Заявки · Жайлы Studio</b><small>бот</small></span></div>
+            <ol class="chat">
+              <li class="msg msg--in">🔥 <b>Новая заявка с сайта</b><br><br>👤 <b>Имя:</b> Ерлан<br>📞 <b>Телефон:</b> <span class="nowrap">+7 (701) 555-12-34</span><br>🛠 <b>Услуга:</b> Ремонт кухни<br>🕒 <b>Время:</b> 27.10.2026, 19:58 (Алматы)<br>📍 <b>Источник:</b> 2gis<br><br>✅ Записано в Google Таблицу</li>
+              <li class="chat__sep">20:08</li>
+              <li class="msg msg--in">🔥 <b>Новая заявка с сайта</b><br><br>👤 <b>Имя:</b> Айгерим<br>📞 <b>Телефон:</b> <span class="nowrap">+7 (707) 123-45-67</span><br>🛠 <b>Услуга:</b> Ремонт санузла<br>💬 <b>Комментарий:</b> Санузел 5 м², хотим начать в ноябре<br>🕒 <b>Время:</b> 27.10.2026, 20:08 (Алматы)<br>📍 <b>Источник:</b> instagram / cpc / autumn_sale<br><br>✅ Записано в Google Таблицу</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="cell cell--3 glass glass--sm reveal">
+          <p class="cell__title">И сразу строка в Google Таблице</p>
+          <div class="sheet-wrap">
+            <table class="sheet">
+              <thead><tr><th>Дата</th><th>Имя</th><th>Телефон</th><th>Услуга</th><th>Источник</th></tr></thead>
+              <tbody>
+                <tr><td>27.10 19:58</td><td>Ерлан</td><td>+7 (701) 555-12-34</td><td>Ремонт кухни</td><td>2gis</td></tr>
+                <tr class="is-new"><td>27.10 20:08</td><td>Айгерим</td><td>+7 (707) 123-45-67</td><td>Ремонт санузла</td><td>instagram / cpc</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="cell__foot">Каждая заявка — новая строка: дата, имя, телефон, услуга, комментарий, источник и UTM-метки. Переписывать вручную ничего не нужно.</p>
+          <ul class="notes" style="margin-top:20px">
+            <li class="tile"><span class="ic-badge c-blue"><svg class="ic"><use href="#i-send"/></svg></span><b>Сначала Telegram</b><small>менеджер видит заявку на телефоне через секунды</small></li>
+            <li class="tile"><span class="ic-badge c-green"><svg class="ic"><use href="#i-table"/></svg></span><b>Потом таблица</b><small>бот отмечает в сообщении, что строка записана</small></li>
+          </ul>
+        </div>
+
+        <div class="cell cell--2 glass glass--sm reveal c-blue">
+          <div class="big"><b>0,9 с</b><span>от нажатия «Отправить» до сообщения у менеджера</span><small>замер в демо, без ускорений</small></div>
+        </div>
+
+        <div class="cell cell--4 glass glass--sm reveal">
+          <p class="cell__title">Телефоны в одном формате</p>
+          <div class="norm">
+            <ul><li>87071234567</li><li>+7 707 1234567</li><li>707-123-45-67</li></ul>
+            <svg class="ic"><use href="#i-arrow"/></svg>
+            <p class="norm__out">+7 (707)<br>123-45-67</p>
+          </div>
+          <p class="cell__foot">По номеру удобно звонить и искать в таблице.</p>
+        </div>
+
+        <div class="cell cell--6 glass glass--sm reveal">
+          <p class="cell__title">Было → стало</p>
+          <ul class="ba">
+            <li><p>Заявка на почте, её проверяют пару раз в день</p><svg class="ic"><use href="#i-arrow"/></svg><p>Сразу в Telegram на телефоне</p></li>
+            <li><p>Заявки переписывают в тетрадь или Excel, часть теряется</p><svg class="ic"><use href="#i-arrow"/></svg><p>Каждая заявка сама становится строкой в таблице</p></li>
+            <li><p>Непонятно, какая реклама работает</p><svg class="ic"><use href="#i-arrow"/></svg><p>У каждой заявки источник и UTM</p></li>
+            <li><p>Спам-боты забивают форму</p><svg class="ic"><use href="#i-arrow"/></svg><p>Поле-ловушка и лимит с одного IP</p></li>
+          </ul>
+          <p class="cell__foot"><span class="tags"><span>Next.js</span><span>TypeScript</span><span>n8n</span><span>Google Sheets API</span><span>Telegram Bot API</span></span></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- 03 Bot -->
+    <section id="bot" class="proj wrap c-pink" aria-labelledby="bot-title">
+      <div class="proj__box">
+      <header class="proj__head reveal">
+        <div>
+          <p class="proj__num"><span>03</span> <em>демо · салон красоты «Сирень»</em></p>
+          <h2 id="bot-title">Telegram-бот записи</h2>
+          <p class="lead">Клиент записывается сам, бот напоминает о визите, администратор видит каждую запись, перенос и отмену.</p>
+        </div>
+        <div class="proj__price glass glass--sm"><span>Telegram-бот</span><b>1–2 недели</b><small>срок разработки</small></div>
+      </header>
+
+      <div class="bento">
+        <div class="cell cell--6 glass glass--sm reveal">
+          <p class="cell__title">Путь клиента: услуга, мастер, день и время — в 4 нажатия</p>
+          <ol class="flow">
+            <li class="tile"><span class="ic-badge c-pink"><svg class="ic"><use href="#i-scissors"/></svg></span><b>Услуга</b><span>стрижка, маникюр, брови…</span></li>
+            <li class="tile"><span class="ic-badge c-purple"><svg class="ic"><use href="#i-user"/></svg></span><b>Мастер</b><span>из тех, кто оказывает услугу</span></li>
+            <li class="tile"><span class="ic-badge c-blue"><svg class="ic"><use href="#i-cal"/></svg></span><b>День</b><span>только дни со свободным временем</span></li>
+            <li class="tile"><span class="ic-badge c-orange"><svg class="ic"><use href="#i-clock"/></svg></span><b>Время</b><span>только реально свободные слоты</span></li>
+            <li class="tile"><span class="ic-badge c-green"><svg class="ic"><use href="#i-check"/></svg></span><b>Записан</b><span>имя и телефон — одной кнопкой</span></li>
+          </ol>
+          <p class="cell__foot">Если филиалов несколько, первым шагом клиент выбирает адрес. Услуги и мастера показываются только этого филиала, адрес приходит в напоминаниях, а уведомления — в чат администраторов филиала.</p>
+        </div>
+
+        <div class="cell cell--6 glass glass--sm reveal">
+          <p class="cell__title">Видео демо · 58 секунд</p>
+          <video class="demo-video" controls playsinline muted preload="none" poster="assets/booking-demo-poster.jpg" width="1920" height="1080">
+            <source src="assets/booking-demo.mp4" type="video/mp4">
+          </video>
+          <p class="cell__foot">Сценарий целиком: ночная запись в 4 нажатия, уведомление администратору, строка в Google Таблице, напоминание и перенос кнопкой. Анимация собрана по коду бота: тексты и кнопки те же, что в Telegram. Салон и клиенты вымышленные.</p>
+        </div>
+
+        <div class="cell cell--4 glass glass--sm reveal">
+          <p class="cell__title">Напоминания — без участия администратора</p>
+          <ol class="tl">
+            <li style="--c:#8e5bd6"><b>Запись</b><span>в любое время суток</span></li>
+            <li style="--c:#a76fe0"><b>За 24 часа</b><span>напоминание с кнопками</span></li>
+            <li style="--c:#5b8cf0"><b>За 2 часа</b><span>второе напоминание</span></li>
+            <li style="--c:#0a84ff"><b>Визит</b><span>в назначенное время</span></li>
+          </ol>
+          <p class="cell__foot">Перенести или отменить можно кнопкой в напоминании — без звонка. Время считается по Алматы.</p>
+        </div>
+
+        <div class="cell cell--2 glass glass--sm reveal c-pink">
+          <div class="big"><b>1&nbsp;слот</b><span>= 1 клиент. База не даст занять время дважды, даже если двое нажали одновременно.</span></div>
+        </div>
+
+        <div class="cell cell--3 glass glass--sm reveal" style="background:linear-gradient(160deg,rgba(236,232,243,.75),rgba(255,255,255,.5))" data-chat>
+          <div class="phone" aria-label="Пример диалога клиента с ботом">
+            <div class="phone__top"><span class="phone__avatar" aria-hidden="true">С</span><span><b>Сирень · запись</b><small>бот</small></span></div>
+            <ol class="chat">
+              <li class="msg msg--in"><b>Шаг 4 из 4.</b> Женская стрижка у мастера Айгерим, пт, 30 окт.<br>Выберите время:
+                <span class="kb kb--grid"><span>11:00</span><span>12:00</span><span class="is-on">15:00</span><span>17:00</span></span>
+              </li>
+              <li class="msg msg--in">✅ <b>Вы записаны!</b><br><br>💇 Женская стрижка — 9 000 ₸<br>👩 Мастер: Айгерим<br>🕐 пт, 30 октября, 15:00</li>
+              <li class="chat__sep">за сутки до визита</li>
+              <li class="msg msg--in">⏰ <b>Напоминание:</b> завтра в 15:00 вас ждут в салоне «Сирень».
+                <span class="kb"><span>👍 Все в силе</span><span>🔁 Перенести</span><span>❌ Отменить</span></span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="cell cell--3 glass glass--sm reveal">
+          <p class="cell__title">В чат администраторов приходит</p>
+          <ul class="notes">
+            <li class="tile"><span class="ic-badge c-blue"><svg class="ic"><use href="#i-plus"/></svg></span><b>Новая запись</b><small>услуга, мастер, время, телефон клиента</small></li>
+            <li class="tile"><span class="ic-badge c-orange"><svg class="ic"><use href="#i-repeat"/></svg></span><b>Перенос</b><small>«было → стало», чтобы не путаться в расписании</small></li>
+            <li class="tile"><span class="ic-badge c-pink"><svg class="ic"><use href="#i-x"/></svg></span><b>Отмена</b><small>окно сразу освобождается для других</small></li>
+            <li class="tile"><span class="ic-badge c-green"><svg class="ic"><use href="#i-table"/></svg></span><b>Строка в Google Таблице</b><small>в варианте «бот + CRM»: клиент, телефон, услуга, мастер, статус</small></li>
+          </ul>
+          <p class="cell__foot"><span class="tags"><span>TypeScript</span><span>grammY</span><span>Supabase</span><span>Google Sheets</span></span></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="final glass reveal">
+        <h2 class="h2">Хотите так же у себя?</h2>
+        <p class="lead">Расскажите о задаче — на бесплатной консультации разберём, что из этого подойдёт вашему бизнесу, и назовём фиксированную цену.</p>
+        <div class="final__cta">
+          <a class="btn" href="index.html#contacts">Обсудить задачу</a>
+          <a class="btn btn--glass" href="index.html#start">14 дней бесплатно</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span>© <span data-year>2026</span> Адиль и команда · демо-проекты используют вымышленные данные</span>
+    <a href="index.html">На главную</a>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
