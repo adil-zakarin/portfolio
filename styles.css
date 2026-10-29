@@ -267,6 +267,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .final .h2 { max-width: 760px; margin: 0 auto; }
 .final .lead { max-width: 600px; margin-inline: auto; }
 .final__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 32px; }
+.final__gets-title { margin-top: 32px; font-weight: 600; }
+.final__gets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 28px; max-width: 760px; margin: 14px auto 0; text-align: left; }
+.final__gets li { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; }
+.final__gets .ic { flex: none; width: 18px; height: 18px; margin-top: 3px; color: var(--green); }
 
 .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-block: 64px 40px; font-size: 14px; color: var(--faint); }
 .footer a { color: var(--muted); }
@@ -285,7 +289,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .proj { position: relative; padding-top: 96px; }
 /* Each project is its own tinted surface; cards inside are solid so glass never stacks on glass */
 .proj__box {
-  position: relative; padding: 48px 40px 40px; border-radius: 40px; overflow: hidden;
+  /* clip, а не hidden: hidden ломает position: sticky внутри карточки */
+  position: relative; padding: 48px 40px 40px; border-radius: 40px; overflow: hidden; overflow: clip;
   background:
     linear-gradient(165deg, color-mix(in srgb, var(--c) 16%, rgba(255, 255, 255, .55)), rgba(255, 255, 255, .38) 55%);
   -webkit-backdrop-filter: blur(30px) saturate(170%);
@@ -309,6 +314,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
 .cell { padding: 28px; min-width: 0; }
+/* Короткий макет рядом с длинным едет вместе с прокруткой, а не оставляет пустую колонку */
+.cell__sticky { position: sticky; top: 88px; }
 .cell--6 { grid-column: span 6; } .cell--4 { grid-column: span 4; } .cell--3 { grid-column: span 3; } .cell--2 { grid-column: span 2; }
 .cell__title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--faint); margin-bottom: 18px; }
 .cell__foot { margin-top: 14px; font-size: 13px; color: var(--faint); }
@@ -520,6 +527,7 @@ figure { margin: 0; }
   .faq details { padding: 0 20px; }
   .faq summary { font-size: 17px; }
   .final { padding: 48px 22px; }
+  .final__gets { grid-template-columns: 1fr; }
   .statband { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 44px; }
   .stat { padding: 18px; }
   .stat b { font-size: 32px; }
