@@ -59,6 +59,7 @@
         <a class="chip" href="#kp">01 · Калькулятор КП</a>
         <a class="chip" href="#leads">02 · Заявка за 3 секунды</a>
         <a class="chip" href="#bot">03 · Бот записи</a>
+        <a class="chip" href="#bot-ai">ИИ-помощник в боте</a>
       </nav>
 
       <div class="statband">
@@ -347,6 +348,58 @@
           </ul>
           <p class="cell__foot"><span class="tags"><span>TypeScript</span><span>grammY</span><span>Supabase</span><span>Google Sheets</span></span></p>
         </div>
+
+        <div id="bot-ai" class="cell cell--6 glass glass--sm reveal">
+          <p class="cell__title">Новое · ИИ-помощник в том же боте</p>
+          <p class="cell__lead">Клиент пишет вопрос своими словами, а не кнопками. Помощник отвечает по&nbsp;данным салона: цены, адреса, часы, свободное время мастеров. Чего в&nbsp;данных нет, он не&nbsp;выдумывает, а&nbsp;передаёт вопрос администратору.</p>
+          <ul class="notes notes--2">
+            <li class="tile"><span class="ic-badge c-teal"><svg class="ic"><use href="#i-list"/></svg></span><b>Только данные салона</b><small>услуги, цены, адреса и свободные окна — из той же базы, что и запись</small></li>
+            <li class="tile"><span class="ic-badge c-orange"><svg class="ic"><use href="#i-user"/></svg></span><b>Сложное — человеку</b><small>жалобы, аллергия, нестандартная работа уходят в чат администраторов филиала</small></li>
+            <li class="tile"><span class="ic-badge c-blue"><svg class="ic"><use href="#i-send"/></svg></span><b>Ответ из рабочего чата</b><small>администратор отвечает на уведомление, бот пересылает ответ клиенту</small></li>
+            <li class="tile"><span class="ic-badge c-pink"><svg class="ic"><use href="#i-cal"/></svg></span><b>Кнопка записи под ответом</b><small>спросили про окрашивание — кнопка ведёт сразу к колористу</small></li>
+          </ul>
+          <p class="cell__foot">В демо ответы даёт модель DeepSeek на вымышленных данных. Для данных реальных клиентов подключаем Claude (Anthropic) или OpenAI через официальный API. Без подключённого ИИ бот честно отвечает, что помощник не подключён, и передаёт вопрос администратору. <span class="tags"><span>Anthropic SDK</span><span>DeepSeek</span><span>TypeScript</span><span>grammY</span></span></p>
+        </div>
+
+        <div class="cell cell--3 glass glass--sm reveal" style="background:linear-gradient(160deg,rgba(220,240,240,.75),rgba(255,255,255,.5))" data-chat>
+          <div class="phone" aria-label="Пример: клиент задаёт вопросы ИИ-помощнику салона">
+            <div class="phone__top"><span class="phone__avatar" aria-hidden="true">С</span><span><b>Сирень · запись</b><small>бот · демо</small></span></div>
+            <ol class="chat">
+              <li class="msg msg--out">сколько стоит окрашивание?</li>
+              <li class="msg msg--in">🤖 Окрашивание в один тон стоит 18 000 ₸, занимает около 60 минут. Выполняет мастер Дана в филиале Самал. Если нужна сложная работа (мелирование, тонирование, исправление цвета) — это лучше уточнить у администратора.
+                <span class="kb"><span>📅 Записаться: Окрашивание в один тон</span><span>❓ Частые вопросы</span></span>
+              </li>
+              <li class="msg msg--out">можно в субботу у Даны?</li>
+              <li class="msg msg--in">🤖 Да, в субботу 31 октября у Даны есть свободные окна. Конкретное время выберите при записи — кнопка записи ниже.
+                <span class="kb"><span>📅 Записаться: Окрашивание в один тон</span><span>❓ Частые вопросы</span></span>
+              </li>
+              <li class="msg msg--out">где вы находитесь?</li>
+              <li class="msg msg--in">🤖 У нас два филиала в Алматы: Центр — ул. Демонстрационная, 1, вход со двора, 2 этаж; Самал — мкр. Самал-2, 10, 1 этаж, отдельный вход. Дана работает в филиале Самал.
+                <span class="kb kb--2"><span>📅 Записаться</span><span>❓ Частые вопросы</span></span>
+              </li>
+              <li class="msg msg--out">у меня аллергия на краску, это не страшно?</li>
+              <li class="msg msg--in">🤖 С аллергией на краску лучше не рисковать — этот вопрос точно стоит обсудить с администратором и мастером до записи. Они подскажут, что можно сделать в вашем случае.<br><br>📨 Передал ваш вопрос администратору — он ответит здесь, в этом чате.
+                <span class="kb"><span>📅 Записаться: Окрашивание в один тон</span><span>❓ Частые вопросы</span></span>
+              </li>
+              <li class="msg msg--in">💬 <b>Ответ администратора:</b><br><br>Анна, Дана сделает пробу краски перед окрашиванием. Позвонить вам, чтобы подобрать время?
+                <span class="kb"><span>📅 Записаться</span></span>
+              </li>
+            </ol>
+          </div>
+          <p class="cell__foot">Реплики 🤖 — дословно из прогона демо 29.10.2026 (модель DeepSeek, вымышленный салон). Кнопки и служебные сообщения — из кода бота.</p>
+        </div>
+
+        <div class="cell cell--3 glass glass--sm reveal" style="background:linear-gradient(160deg,rgba(236,232,243,.75),rgba(255,255,255,.5))" data-chat>
+          <div class="phone" aria-label="Пример: вопрос клиента в чате администраторов">
+            <div class="phone__top"><span class="phone__avatar phone__avatar--blue" aria-hidden="true">А</span><span><b>Администраторы · Сирень</b><small>группа · демо</small></span></div>
+            <ol class="chat">
+              <li class="msg msg--in">❓ <b>Вопрос клиента — нужен ответ</b><br>📍 Филиал: Самал<br>👤 Анна (@anna_demo)<br>💬 «у меня аллергия на краску, это не страшно?»<br>🤖 Почему бот не ответил сам: Клиентка сообщает об аллергии на краску — нужно уточнить противопоказания и возможные варианты, решает администратор/мастер.<br><br>↩️ Ответьте на это сообщение — бот перешлет ответ клиенту. #q501</li>
+              <li class="msg msg--out">Анна, Дана сделает пробу краски перед окрашиванием. Позвонить вам, чтобы подобрать время?</li>
+              <li class="msg msg--in">✅ Ответ отправлен клиенту.</li>
+            </ol>
+          </div>
+          <p class="cell__foot">Администратор отвечает на уведомление обычным ответом (reply) — клиент получает его в чате с ботом. Салон, клиент и переписка вымышленные.</p>
+        </div>
       </div>
       </div>
     </section>
@@ -354,7 +407,7 @@
     <section class="section wrap">
       <div class="final glass reveal">
         <h2 class="h2">Хотите так же у себя?</h2>
-        <p class="lead">Расскажите о задаче — на бесплатной консультации разберём, что из этого подойдёт вашему бизнесу, и назовём фиксированную цену.</p>
+        <p class="lead">Расскажите о задаче — на бесплатной консультации разберём, что из этого подойдёт вашему бизнесу, и назовём вилку цены. Точную зафиксируем в ТЗ.</p>
         <div class="final__cta">
           <a class="btn" href="index.html#contacts">Обсудить задачу</a>
           <a class="btn btn--glass" href="index.html#start">14 дней бесплатно</a>
