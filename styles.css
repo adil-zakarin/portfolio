@@ -226,13 +226,18 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* About */
 .about { padding: 40px; display: grid; grid-template-columns: 160px 1fr; gap: 40px; align-items: center; max-width: 880px; margin-inline: auto; }
-.about__photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; display: grid; place-items: center; font: 700 64px/1 var(--display); color: #fff; background: linear-gradient(135deg, #0a84ff, #8e5bd6); box-shadow: var(--shadow-sm); }
+.about__photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; display: grid; place-items: center; font: 700 64px/1 var(--display); color: #fff; background: linear-gradient(135deg, #0a84ff, #8e5bd6); box-shadow: 0 0 0 1px var(--hair), var(--shadow-sm); }
 .about h3 { font-size: clamp(26px, 3vw, 32px); letter-spacing: -0.03em; }
 .about__role { margin-top: 4px; color: var(--muted); }
 .about__body > p + p { margin-top: 14px; color: var(--ink-2); }
 .about__facts { display: grid; gap: 8px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--hair); }
 .about__facts li { display: flex; gap: 10px; align-items: center; font-size: 16px; }
 .about__facts .ic { width: 18px; height: 18px; color: var(--green); }
+.team { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 880px; margin: 16px auto 0; }
+.team__card { display: flex; gap: 20px; align-items: center; padding: 22px 24px; }
+.team__photo { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; flex: none; box-shadow: 0 0 0 1px var(--hair), var(--shadow-sm); }
+.team h3 { font-size: 21px; letter-spacing: -0.02em; }
+.team__text { margin-top: 10px; font-size: 15px; color: var(--ink-2); }
 
 /* Placeholders to fill before publishing (see README) */
 [data-todo] { outline: 2px dashed #f08a00; outline-offset: 3px; border-radius: 4px; }
@@ -516,6 +521,9 @@ figure { margin: 0; }
   .about__facts { text-align: left; }
   .about__facts li { align-items: flex-start; }
   .about__facts .ic { margin-top: 3px; }
+  .team { grid-template-columns: 1fr; gap: 12px; }
+  .team__card { padding: 18px 20px; gap: 16px; }
+  .team__photo { width: 72px; height: 72px; }
   .float { position: relative; inset: auto; max-width: none; margin-top: 12px; }
   .pains, .trust { grid-template-columns: 1fr; }
   .pain { padding: 24px; grid-template-columns: 1fr; }
