@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Пример плана автоматизации — Agyn team</title>
+  <meta name="description" content="Какой план автоматизации вы получите письмом после бесплатной консультации. Пример для вымышленного мебельного цеха: что сейчас, где теряются деньги, этапы, сроки, что сделать самим.">
+  <meta property="og:title" content="Пример плана автоматизации после консультации">
+  <meta property="og:image" content="https://adil-zakarin.github.io/portfolio/assets/kp-builder.jpg">
+  <meta name="theme-color" content="#eef0f5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon-32.png" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L4 20z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 3 10.5l7 2.5 2.5 7z"/><path d="m21 3-11 10"/></symbol>
+  </svg>
+  <div class="bg" aria-hidden="true"></div>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="nav">
+    <a class="nav__logo" href="index.html">Agyn<span>.team</span></a>
+    <nav class="nav__links" id="nav-links" aria-label="Страницы сайта">
+      <a href="index.html">Главная</a>
+      <a href="projects.html">Проекты</a>
+      <a href="plan.html" aria-current="page">Пример плана</a>
+      <a href="agency.html">Маркетологам</a>
+    </nav>
+    <a class="btn btn--sm" href="index.html#contacts">Консультация</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Меню"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </header>
+
+  <main id="main">
+    <section class="page-hero wrap">
+      <span class="chip"><i></i>Пример · компания вымышленная</span>
+      <h1 class="plan-title">План автоматизации</h1>
+      <p class="lead">Такой план мы присылаем письмом после бесплатной консультации — он ваш, даже если работать с&nbsp;нами вы не&nbsp;будете. Его удобно переслать бухгалтеру или партнёру, чтобы решить вместе.</p>
+    </section>
+
+    <section class="section section--tight wrap" aria-label="Пример плана">
+      <article class="plan glass">
+        <dl class="plan__meta">
+          <div><dt>Компания</dt><dd>Мебельный цех на заказ, Алматы</dd></div>
+          <div><dt>Кто в работе</dt><dd>Владелец, 3 менеджера, цех, кладовщик, бухгалтер на аутсорсе</dd></div>
+          <div><dt>Клиенты</dt><dd>Офисы, кафе, магазины</dd></div>
+        </dl>
+
+        <section class="plan__sec">
+          <h2>1. Как сейчас</h2>
+          <p class="plan__hint">Со слов владельца на консультации.</p>
+          <ul class="plan__list">
+            <li>Прайс на материалы и работы — в Excel, у каждого менеджера своя копия.</li>
+            <li>КП считают вручную: материалы, фурнитура, монтаж, доставка, НДС. Сложное КП с правками растягивается на несколько дней.</li>
+            <li>Остатки ЛДСП и фурнитуры знает только кладовщик, менеджеры ему звонят.</li>
+            <li>Бухгалтерия — в 1С, переписка с клиентами — в WhatsApp.</li>
+          </ul>
+        </section>
+
+        <section class="plan__sec">
+          <h2>2. Где теряются время и деньги</h2>
+          <ul class="plan__list plan__list--warn">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-warn"/></svg><span>Клиент ждёт КП и в это время сравнивает с другими цехами.</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-warn"/></svg><span>Менеджеры считают по разным прайсам: один и тот же шкаф у двух менеджеров стоит по-разному.</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-warn"/></svg><span>Материал заканчивается посреди заказа — срок монтажа сдвигается.</span></li>
+          </ul>
+        </section>
+
+        <section class="plan__sec">
+          <h2>3. Что предлагаем</h2>
+          <ol class="plan__stages">
+            <li class="tile">
+              <b>Этап 1. Каталог и калькулятор КП</b>
+              <span>Материалы, работы и наценки — в одном справочнике. КП собирается из позиций, НДС и скидки считаются сами, PDF с реквизитами — одной кнопкой. Цены меняет один человек, у всех они сразу одинаковые.</span>
+              <small>2–3 недели</small>
+            </li>
+            <li class="tile">
+              <b>Этап 2. Заказы и склад</b>
+              <span>Статус каждого заказа: замер, производство, монтаж. Материалы списываются по заказу, менеджер видит остатки до того, как назвать срок клиенту.</span>
+              <small>2–3 недели</small>
+            </li>
+            <li class="tile tile--later">
+              <b>Позже, если понадобится</b>
+              <span>Обмен с 1С — решим, когда посмотрим базу: зависит от её версии и настроек. Если не окупится, честно скажем.</span>
+            </li>
+          </ol>
+          <p class="plan__keep">Не трогаем: бухгалтерия остаётся в 1С, с клиентами общаетесь в WhatsApp как раньше.</p>
+        </section>
+
+        <section class="plan__sec">
+          <h2>4. Что можно сделать самим уже сейчас</h2>
+          <p class="plan__hint">Без нас и без разработки.</p>
+          <ul class="plan__list plan__list--ok">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Один прайс в Google Таблице: менеджеры только смотрят, правит один человек. Копии на компьютерах удалить.</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Шаблон КП, где уже есть строки доставки, монтажа и НДС, — меньше забытых позиций.</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Раз в неделю кладовщик пишет в общий чат остатки по основным материалам.</span></li>
+          </ul>
+        </section>
+
+        <section class="plan__sec">
+          <h2>5. Срок и цена</h2>
+          <div class="plan__price">
+            <div><span>Срок</span><b>4–6 недель</b><small>оба этапа</small></div>
+            <div class="plan__price-fork"><span>Вилка цены</span><b>в письме</b><small>по каждому этапу отдельно, называем на консультации</small></div>
+          </div>
+          <p>Первые 14 дней работаем бесплатно: собираем каталог и первые КП на ваших данных, показываем каждые пару дней. Не захотите продолжать — план остаётся у вас, платить ничего не нужно. Точную цену фиксируем в ТЗ, когда готов план.</p>
+        </section>
+
+        <section class="plan__sec">
+          <h2>6. Что нужно от вас</h2>
+          <ul class="plan__list">
+            <li>Прайс материалов и работ в Excel — как есть, без подготовки.</li>
+            <li>3–5 недавних КП: на них проверим, что система считает так же, как вы.</li>
+            <li>Остатки по складу, если где-то ведутся.</li>
+            <li>Кто с вашей стороны отвечает на вопросы и проверяет КП.</li>
+          </ul>
+        </section>
+
+        <section class="plan__sec">
+          <h2>7. Как проверим, что стало лучше</h2>
+          <p>До старта засекаем на ваших недавних КП, сколько уходит на одно. После запуска замеряем снова на таких же. Результат — ваши цифры, а не наши обещания.</p>
+        </section>
+
+        <p class="plan__foot">Пример составлен для вымышленной компании. Ваш план будет про ваш бизнес: после консультации, письмом, бесплатно.</p>
+      </article>
+    </section>
+
+    <section class="section section--tight wrap" aria-labelledby="plan-cta-title">
+      <div class="final glass reveal">
+        <h2 id="plan-cta-title" class="h2">Хотите такой план для своего бизнеса?</h2>
+        <p class="lead">Консультация 20–30 минут, бесплатно. План пришлём письмом после созвона.</p>
+        <div class="final__cta">
+          <a class="btn" href="https://wa.me/77054488910?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%90%D0%B4%D0%B8%D0%BB%D1%8C%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8E.%20%D0%9D%D0%B0%D1%88%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%3A%20" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg>Написать в WhatsApp</a>
+          <a class="btn btn--glass" href="https://t.me/Adil_Zakarin?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%90%D0%B4%D0%B8%D0%BB%D1%8C%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8E.%20%D0%9D%D0%B0%D1%88%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%3A%20" target="_blank" rel="noopener"><svg class="ic"><use href="#i-send"/></svg>Telegram</a>
+          <a class="btn btn--glass" href="tel:+77054488910"><span class="nowrap">+7 705 448 89 10</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span>© <span data-year>2026</span> Agyn team · пример плана для вымышленной компании</span>
+    <a href="index.html">На главную</a>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

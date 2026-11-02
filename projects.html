@@ -45,12 +45,14 @@
 
   <header class="nav">
     <a class="nav__logo" href="index.html">Agyn<span>.team</span></a>
-    <nav class="nav__links" aria-label="Разделы">
-      <a class="nav__keep" href="projects.html" aria-current="page">Проекты</a>
-      <a href="index.html#start">Как начать</a>
-      <a href="index.html#faq">Вопросы</a>
+    <nav class="nav__links" id="nav-links" aria-label="Страницы сайта">
+      <a href="index.html">Главная</a>
+      <a href="projects.html" aria-current="page">Проекты</a>
+      <a href="plan.html">Пример плана</a>
+      <a href="agency.html">Маркетологам</a>
     </nav>
     <a class="btn btn--sm" href="index.html#contacts">Консультация</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Меню"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </header>
 
   <main id="main">
@@ -121,7 +123,7 @@
             <li class="tile"><span class="ic-badge c-blue"><svg class="ic"><use href="#i-user"/></svg></span><b>Клиент</b><span>из базы, реквизиты подставятся сами</span></li>
             <li class="tile"><span class="ic-badge c-green"><svg class="ic"><use href="#i-list"/></svg></span><b>Позиции</b><span>из каталога: тираж, бумага, ламинация</span></li>
             <li class="tile"><span class="ic-badge c-orange"><svg class="ic"><use href="#i-percent"/></svg></span><b>Скидка</b><span>за объём — по правилам прайса</span></li>
-            <li class="tile"><span class="ic-badge c-pink"><svg class="ic"><use href="#i-receipt"/></svg></span><b>НДС 12%</b><span>включается галочкой</span></li>
+            <li class="tile"><span class="ic-badge c-pink"><svg class="ic"><use href="#i-receipt"/></svg></span><b>НДС 16%</b><span>включается галочкой</span></li>
             <li class="tile"><span class="ic-badge c-purple"><svg class="ic"><use href="#i-doc"/></svg></span><b>PDF</b><span>с номером, сроком и суммой прописью</span></li>
           </ol>
         </div>
@@ -137,11 +139,11 @@
         <div class="cell cell--4 glass glass--sm reveal">
           <p class="cell__title">Как считается КП · пример из демо</p>
           <div class="wf grow">
-            <div class="wf__row"><span>Подытог</span><div class="wf__track"><i style="--l:0;--w:93.7"></i></div><b>42 500</b></div>
-            <div class="wf__row wf__row--neg"><span>Скидка за объём</span><div class="wf__track"><i style="--l:89.3;--w:4.4"></i></div><b>−2 000</b></div>
-            <div class="wf__row"><span>Без НДС</span><div class="wf__track"><i style="--l:0;--w:89.3"></i></div><b>40 500</b></div>
-            <div class="wf__row wf__row--add"><span>НДС 12%</span><div class="wf__track"><i style="--l:89.3;--w:10.7"></i></div><b>+4 860</b></div>
-            <div class="wf__row wf__row--total"><span>Итого с НДС</span><div class="wf__track"><i style="--l:0;--w:100"></i></div><b>45 360 ₸</b></div>
+            <div class="wf__row"><span>Подытог</span><div class="wf__track"><i style="--l:0;--w:90.5"></i></div><b>42 500</b></div>
+            <div class="wf__row wf__row--neg"><span>Скидка за объём</span><div class="wf__track"><i style="--l:86.2;--w:4.3"></i></div><b>−2 000</b></div>
+            <div class="wf__row"><span>Без НДС</span><div class="wf__track"><i style="--l:0;--w:86.2"></i></div><b>40 500</b></div>
+            <div class="wf__row wf__row--add"><span>НДС 16%</span><div class="wf__track"><i style="--l:86.2;--w:13.8"></i></div><b>+6 480</b></div>
+            <div class="wf__row wf__row--total"><span>Итого с НДС</span><div class="wf__track"><i style="--l:0;--w:100"></i></div><b>46 980 ₸</b></div>
           </div>
           <p class="cell__foot">Визитки 1 000 шт и баннер 9 м². Расчёт покрыт тестами: округление, минимальный заказ, скидки, НДС.</p>
         </div>
@@ -160,11 +162,11 @@
         <div class="cell cell--6 reveal" style="padding:0">
           <div class="shots">
             <figure class="shot glass glass--sm">
-              <a href="assets/kp-builder.jpg" target="_blank" rel="noopener"><img src="assets/kp-builder.jpg" width="1800" height="1126" alt="Экран «Новое КП»: выбран клиент, добавлены визитки и баннер, справа превью предложения с итогом 45 360 ₸" loading="lazy"></a>
+              <a href="assets/kp-builder.jpg" target="_blank" rel="noopener"><img src="assets/kp-builder.jpg" width="1800" height="1126" alt="Экран «Новое КП»: выбран клиент, добавлены визитки и баннер, справа превью предложения с итогом 46 980 ₸" loading="lazy"></a>
               <figcaption>Экран «Новое КП»: документ виден ещё до сохранения</figcaption>
             </figure>
             <figure class="shot shot--paper glass glass--sm">
-              <a href="assets/kp-pdf.jpg" target="_blank" rel="noopener"><img src="assets/kp-pdf.jpg" width="1000" height="1414" alt="PDF коммерческого предложения КП-2026-0001" loading="lazy"></a>
+              <a href="assets/kp-pdf.jpg" target="_blank" rel="noopener"><img src="assets/kp-pdf.jpg" width="1000" height="1414" alt="PDF коммерческого предложения КП-2026-0005" loading="lazy"></a>
               <figcaption>PDF для клиента</figcaption>
             </figure>
           </div>
@@ -354,7 +356,7 @@
 
         <div id="bot-ai" class="cell cell--6 glass glass--sm reveal">
           <p class="cell__title">Новое · ИИ-помощник в том же боте</p>
-          <p class="cell__lead">Клиент пишет вопрос своими словами, а не кнопками. Помощник отвечает по&nbsp;данным салона: цены, адреса, часы, свободное время мастеров. Чего в&nbsp;данных нет, он не&nbsp;выдумывает, а&nbsp;передаёт вопрос администратору.</p>
+          <p class="cell__lead">Клиент пишет вопрос своими словами, а не кнопками. Помощник отвечает по&nbsp;данным салона: цены, адреса, часы, свободное время мастеров. Если ответа в&nbsp;данных нет, передаёт вопрос администратору.</p>
           <ul class="notes notes--2">
             <li class="tile"><span class="ic-badge c-teal"><svg class="ic"><use href="#i-list"/></svg></span><b>Только данные салона</b><small>услуги, цены, адреса и свободные окна — из той же базы, что и запись</small></li>
             <li class="tile"><span class="ic-badge c-orange"><svg class="ic"><use href="#i-user"/></svg></span><b>Сложное — человеку</b><small>жалобы, аллергия, нестандартная работа уходят в чат администраторов филиала</small></li>
@@ -431,7 +433,7 @@
   </main>
 
   <footer class="footer wrap">
-    <span>© <span data-year>2026</span> Agyn team · демо-проекты используют вымышленные данные</span>
+    <span>© <span data-year>2026</span> Agyn team — ИП Закарин · демо-проекты используют вымышленные данные</span>
     <a href="index.html">На главную</a>
   </footer>
 
